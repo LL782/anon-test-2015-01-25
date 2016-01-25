@@ -1,0 +1,11 @@
+/* variables, mixins and fonts - always first */
+@import "variables";
+
+/* resets and normalisation - if used */
+// @import "normalize";
+
+/* core styles */
+@import "components";
+
+/* responsive width breakpoints - always last */
+// responsive breakpoints here
