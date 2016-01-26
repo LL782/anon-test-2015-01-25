@@ -1,0 +1,75 @@
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations mirrors in the break point files
+   mirrors the structure used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+
+@media screen and (max-width: 639px) {
+
+    /* ==========================================================================
+       Lists
+       ========================================================================== */
+
+    .tabular-list-wrap {
+        ol {
+            li {
+                height: 1.5em;
+                line-height: 1.5em;
+                padding: 0 3px;
+
+                span.multiple-counter {
+                    right: 3px;
+                    // Responsive dimensions are also defined in breakpoint SASS files
+                }
+            }
+        }
+    }
+    ol.tabular {
+
+        // 1 col
+        [data-vis-cols="1"] & {
+            @include percental_width(1);
+        }
+        // 2 cols
+        [data-vis-cols="2"] & {
+            @include percental_width(2);
+        }
+        // 3 cols
+        [data-vis-cols="3"] &,
+        [data-vis-cols="5"] &,
+        [data-vis-cols="6"] &,
+        [data-vis-cols="9"] &,
+        [data-vis-cols="11"] &, 
+        [data-vis-cols="12"] &,
+        [data-vis-cols="15"] &, 
+        [data-vis-cols="17"] &, 
+        [data-vis-cols="18"] &,
+        [data-vis-cols="21"] &, 
+        [data-vis-cols="22"] &, 
+        [data-vis-cols="23"] &, 
+        [data-vis-cols="24"] &, 
+        [data-vis-cols="26"] &  {
+            @include percental_width(3);
+        }
+        // 4 cols
+        [data-vis-cols="4"] &, 
+        [data-vis-cols="7"] &, 
+        [data-vis-cols="8"] &,
+        [data-vis-cols="10"] &,
+        [data-vis-cols="13"] &,
+        [data-vis-cols="14"] &,
+        [data-vis-cols="16"] &,
+        [data-vis-cols="19"] &,
+        [data-vis-cols="20"] &, 
+        [data-vis-cols="25"] & {
+            @include percental_width(4);
+        }
+    }
+}
+

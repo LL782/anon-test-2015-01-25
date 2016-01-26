@@ -1,0 +1,88 @@
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations in this file should mirror the structure 
+   used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+
+    /* ==========================================================================
+       Lists
+       ========================================================================== */
+
+    .tabular-list-wrap {
+        ol {
+            li {
+                height: 2em;
+                line-height: 2em;
+                padding: 0 5px;
+
+                span.multiple-counter {
+                    right: 5px;
+                    // Responsive dimensions are also defined in breakpoint SASS files
+                }
+            }
+        }
+    }
+    ol.tabular {
+        [data-vis-cols="1"] & {
+            @include percental_width(1);
+        }
+        [data-vis-cols="2"] & {
+            @include percental_width(2);
+        }
+        [data-vis-cols="3"] & {
+            @include percental_width(3);
+        }
+        [data-vis-cols="4"] & {
+            @include percental_width(4);
+        }
+        [data-vis-cols="5"] &,
+        [data-vis-cols="15"] & {
+            @include percental_width(5);
+        }
+        [data-vis-cols="6"] & {
+            @include percental_width(6);
+        }
+        [data-vis-cols="7"] &,
+        [data-vis-cols="14"] &,
+        [data-vis-cols="21"] & {
+            @include percental_width(7);
+        }
+        [data-vis-cols="8"] &,
+        [data-vis-cols="16"] & {
+            @include percental_width(8);
+        }
+        [data-vis-cols="9"] &,
+        [data-vis-cols="17"] &,
+        [data-vis-cols="18"] & {
+            @include percental_width(9);
+        }
+        [data-vis-cols="10"] &,
+        [data-vis-cols="19"] &,
+        [data-vis-cols="20"] & {
+            @include percental_width(10);
+        }
+        [data-vis-cols="11"] &,
+        [data-vis-cols="22"] & {
+            @include percental_width(11);
+        }
+        [data-vis-cols="12"] &,
+        [data-vis-cols="23"] &,
+        [data-vis-cols="24"] & {
+            @include percental_width(12);
+        }
+        [data-vis-cols="13"] &,
+        [data-vis-cols="25"] &,
+        [data-vis-cols="26"] & {
+            @include percental_width(13);
+        }
+    }
+}
+

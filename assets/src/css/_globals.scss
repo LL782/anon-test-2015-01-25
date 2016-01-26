@@ -1,0 +1,33 @@
+/* Global
+   ======
+   Global styles and page layout.
+
+   Contents:
+    - Document styles
+    - Page layout
+
+*/
+
+
+/* ==========================================================================
+   Document styles
+   ========================================================================== */
+
+html {
+    color: $colInk1;
+    font-size: 1em;
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: $colHighlightBright;
+    text-shadow: none;
+}
+::selection {
+    background: $colHighlightBright;
+    text-shadow: none;
+}
+
+
+/* ==========================================================================
+   Page layout
+   ========================================================================== */

@@ -1,11 +1,40 @@
-/* variables, mixins and fonts - always first */
-@import "variables";
+/* Main file
+   =========
+   Single core SASS file for all CSS
 
-/* resets and normalisation - if used */
+*/
+
+
+/* ==========================================================================
+   Variables, mixins and fonts - always first
+   ========================================================================== */
+
+@import "variables";
+@import "mixins";
+
+
+/* ==========================================================================
+   Resets, normalisation and start styles - if used
+   ========================================================================== */
+
 // @import "normalize";
 
-/* core styles */
-@import "components";
 
-/* responsive width breakpoints - always last */
-// responsive breakpoints here
+/* ==========================================================================
+   Core styles
+   ========================================================================== */
+
+@import "globals";
+@import "components";
+@import "helpers";
+
+
+/* ==========================================================================
+   Responsive width breakpoints - always last
+   ========================================================================== */
+
+@import "break-0-639";
+@import "break-640-959";
+@import "break-960-1279";
+@import "break-1280-1599";
+@import "break-1600-up";

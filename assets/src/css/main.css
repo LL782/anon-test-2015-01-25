@@ -1,7 +1,51 @@
-/* variables, mixins and fonts - always first */
-/* resets and normalisation - if used */
-/* core styles */
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+/* Main file
+   =========
+   Single core SASS file for all CSS
+
+*/
+/* ==========================================================================
+   Variables, mixins and fonts - always first
+   ========================================================================== */
+/* Variables
+   =========
+   All variables used throughout SASS files.
+
+   Contents:
+    - Colours
+
+*/
+/* ==========================================================================
+   Colours
+   ========================================================================== */
+/* Mixins
+   ======
+   All mixins used throughout SASS files.
+
+   Contents:
+    - Dimensions
+
+*/
+/* ==========================================================================
+   Dimensions
+   ========================================================================== */
+/* ==========================================================================
+   Resets, normalisation and start styles - if used
+   ========================================================================== */
+/* ==========================================================================
+   Core styles
+   ========================================================================== */
+/* Global
+   ======
+   Global styles and page layout.
+
+   Contents:
+    - Document styles
+    - Page layout
+
+*/
+/* ==========================================================================
+   Document styles
+   ========================================================================== */
 html {
   color: #222;
   font-size: 1em;
@@ -18,15 +62,20 @@ html {
   text-shadow: none;
 }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
+/* ==========================================================================
+   Page layout
+   ========================================================================== */
+/* Components
+   ==========
+   Styles for page elements and custom components.
+   Contents:
+    - Forms
+    - Lists
 
+*/
+/* ==========================================================================
+   Forms
+   ========================================================================== */
 fieldset {
   border: 0;
   margin: 0;
@@ -37,16 +86,48 @@ textarea {
   resize: vertical;
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+.tabular-list-wrap {
+  border-width: 0 0 0 1px;
+  margin-bottom: 2em;
+  overflow: hidden;
+  width: auto;
+}
+.tabular-list-wrap, .tabular-list-wrap ol, .tabular-list-wrap li {
+  border-style: solid;
+  border-color: #222;
+}
+.tabular-list-wrap ol {
+  border-width: 1px 0 0;
+  float: left;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  min-width: 60px;
+}
+.tabular-list-wrap ol li {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+.tabular-list-wrap ol li.list-header {
+  background-color: #ffc;
+  font-weight: 600;
+}
+.tabular-list-wrap ol li.has-multiple {
+  padding-right: 1.25em;
+  position: relative;
+}
+.tabular-list-wrap ol li .multiple-counter {
+  position: absolute;
+  right: 5px;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -94,6 +175,277 @@ textarea {
   *zoom: 1;
 }
 
-/* responsive width breakpoints - always last */
+/* ==========================================================================
+   Responsive width breakpoints - always last
+   ========================================================================== */
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations mirrors in the break point files
+   mirrors the structure used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+@media screen and (max-width: 639px) {
+  /* ==========================================================================
+     Lists
+     ========================================================================== */
+  .tabular-list-wrap ol li {
+    height: 1.5em;
+    line-height: 1.5em;
+    padding: 0 3px;
+  }
+  .tabular-list-wrap ol li span.multiple-counter {
+    right: 3px;
+  }
+
+  [data-vis-cols="1"] ol.tabular {
+    width: 100%;
+  }
+  [data-vis-cols="2"] ol.tabular {
+    width: 50%;
+  }
+  [data-vis-cols="3"] ol.tabular, [data-vis-cols="5"] ol.tabular, [data-vis-cols="6"] ol.tabular, [data-vis-cols="9"] ol.tabular, [data-vis-cols="11"] ol.tabular, [data-vis-cols="12"] ol.tabular, [data-vis-cols="15"] ol.tabular, [data-vis-cols="17"] ol.tabular, [data-vis-cols="18"] ol.tabular, [data-vis-cols="21"] ol.tabular, [data-vis-cols="22"] ol.tabular, [data-vis-cols="23"] ol.tabular, [data-vis-cols="24"] ol.tabular, [data-vis-cols="26"] ol.tabular {
+    width: 33.33333%;
+  }
+  [data-vis-cols="4"] ol.tabular, [data-vis-cols="7"] ol.tabular, [data-vis-cols="8"] ol.tabular, [data-vis-cols="10"] ol.tabular, [data-vis-cols="13"] ol.tabular, [data-vis-cols="14"] ol.tabular, [data-vis-cols="16"] ol.tabular, [data-vis-cols="19"] ol.tabular, [data-vis-cols="20"] ol.tabular, [data-vis-cols="25"] ol.tabular {
+    width: 25%;
+  }
+}
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations mirrors in the break point files
+   mirrors the structure used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+@media screen and (min-width: 640px) and (max-width: 959px) {
+  /* ==========================================================================
+     Lists
+     ========================================================================== */
+  .tabular-list-wrap ol li {
+    height: 1.5em;
+    line-height: 1.5em;
+    padding: 0 3px;
+  }
+  .tabular-list-wrap ol li span.multiple-counter {
+    right: 3px;
+  }
+
+  [data-vis-cols="1"] ol.tabular {
+    width: 100%;
+  }
+  [data-vis-cols="2"] ol.tabular {
+    width: 50%;
+  }
+  [data-vis-cols="3"] ol.tabular {
+    width: 33.33333%;
+  }
+  [data-vis-cols="4"] ol.tabular, [data-vis-cols="7"] ol.tabular, [data-vis-cols="8"] ol.tabular, [data-vis-cols="16"] ol.tabular {
+    width: 25%;
+  }
+  [data-vis-cols="5"] ol.tabular, [data-vis-cols="9"] ol.tabular, [data-vis-cols="10"] ol.tabular, [data-vis-cols="13"] ol.tabular, [data-vis-cols="14"] ol.tabular, [data-vis-cols="15"] ol.tabular, [data-vis-cols="19"] ol.tabular, [data-vis-cols="20"] ol.tabular, [data-vis-cols="25"] ol.tabular {
+    width: 20%;
+  }
+  [data-vis-cols="6"] ol.tabular, [data-vis-cols="11"] ol.tabular, [data-vis-cols="12"] ol.tabular, [data-vis-cols="17"] ol.tabular, [data-vis-cols="18"] ol.tabular, [data-vis-cols="21"] ol.tabular, [data-vis-cols="22"] ol.tabular, [data-vis-cols="23"] ol.tabular, [data-vis-cols="24"] ol.tabular, [data-vis-cols="26"] ol.tabular {
+    width: 16.66667%;
+  }
+}
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations in this file should mirror the structure 
+   used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+  /* ==========================================================================
+     Lists
+     ========================================================================== */
+  .tabular-list-wrap ol li {
+    height: 2em;
+    line-height: 2em;
+    padding: 0 4px;
+  }
+  .tabular-list-wrap ol li span.multiple-counter {
+    right: 4px;
+  }
+
+  [data-vis-cols="1"] ol.tabular {
+    width: 100%;
+  }
+  [data-vis-cols="2"] ol.tabular {
+    width: 50%;
+  }
+  [data-vis-cols="3"] ol.tabular {
+    width: 33.33333%;
+  }
+  [data-vis-cols="4"] ol.tabular {
+    width: 25%;
+  }
+  [data-vis-cols="5"] ol.tabular, [data-vis-cols="10"] ol.tabular, [data-vis-cols="19"] ol.tabular, [data-vis-cols="20"] ol.tabular, [data-vis-cols="25"] ol.tabular {
+    width: 20%;
+  }
+  [data-vis-cols="6"] ol.tabular, [data-vis-cols="11"] ol.tabular, [data-vis-cols="12"] ol.tabular {
+    width: 16.66667%;
+  }
+  [data-vis-cols="7"] ol.tabular, [data-vis-cols="13"] ol.tabular, [data-vis-cols="14"] ol.tabular, [data-vis-cols="21"] ol.tabular {
+    width: 14.28571%;
+  }
+  [data-vis-cols="8"] ol.tabular, [data-vis-cols="15"] ol.tabular, [data-vis-cols="16"] ol.tabular, [data-vis-cols="22"] ol.tabular, [data-vis-cols="23"] ol.tabular, [data-vis-cols="24"] ol.tabular, [data-vis-cols="26"] ol.tabular {
+    width: 12.5%;
+  }
+  [data-vis-cols="9"] ol.tabular, [data-vis-cols="17"] ol.tabular, [data-vis-cols="18"] ol.tabular {
+    width: 11.11111%;
+  }
+}
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations in this file should mirror the structure 
+   used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  /* ==========================================================================
+     Lists
+     ========================================================================== */
+  .tabular-list-wrap ol li {
+    height: 2em;
+    line-height: 2em;
+    padding: 0 5px;
+  }
+  .tabular-list-wrap ol li span.multiple-counter {
+    right: 5px;
+  }
+
+  [data-vis-cols="1"] ol.tabular {
+    width: 100%;
+  }
+  [data-vis-cols="2"] ol.tabular {
+    width: 50%;
+  }
+  [data-vis-cols="3"] ol.tabular {
+    width: 33.33333%;
+  }
+  [data-vis-cols="4"] ol.tabular {
+    width: 25%;
+  }
+  [data-vis-cols="5"] ol.tabular, [data-vis-cols="15"] ol.tabular {
+    width: 20%;
+  }
+  [data-vis-cols="6"] ol.tabular {
+    width: 16.66667%;
+  }
+  [data-vis-cols="7"] ol.tabular, [data-vis-cols="14"] ol.tabular, [data-vis-cols="21"] ol.tabular {
+    width: 14.28571%;
+  }
+  [data-vis-cols="8"] ol.tabular, [data-vis-cols="16"] ol.tabular {
+    width: 12.5%;
+  }
+  [data-vis-cols="9"] ol.tabular, [data-vis-cols="17"] ol.tabular, [data-vis-cols="18"] ol.tabular {
+    width: 11.11111%;
+  }
+  [data-vis-cols="10"] ol.tabular, [data-vis-cols="19"] ol.tabular, [data-vis-cols="20"] ol.tabular {
+    width: 10%;
+  }
+  [data-vis-cols="11"] ol.tabular, [data-vis-cols="22"] ol.tabular {
+    width: 9.09091%;
+  }
+  [data-vis-cols="12"] ol.tabular, [data-vis-cols="23"] ol.tabular, [data-vis-cols="24"] ol.tabular {
+    width: 8.33333%;
+  }
+  [data-vis-cols="13"] ol.tabular, [data-vis-cols="25"] ol.tabular, [data-vis-cols="26"] ol.tabular {
+    width: 7.69231%;
+  }
+}
+/* Breakpoint - 960+
+   =======
+   Break point for screens 960px wide and above.
+   
+   Note: structure of rule declarations in this file should mirror the structure 
+   used to define the same element in previous files. 
+
+   Contents:
+    - Lists
+
+*/
+@media screen and (min-width: 1600px) {
+  /* ==========================================================================
+     Lists
+     ========================================================================== */
+  .tabular-list-wrap ol li {
+    height: 2em;
+    line-height: 2em;
+    padding: 0 6px;
+  }
+  .tabular-list-wrap ol li span.multiple-counter {
+    right: 6px;
+  }
+
+  [data-vis-cols="1"] ol.tabular {
+    width: 100%;
+  }
+  [data-vis-cols="2"] ol.tabular {
+    width: 50%;
+  }
+  [data-vis-cols="3"] ol.tabular {
+    width: 33.33333%;
+  }
+  [data-vis-cols="4"] ol.tabular {
+    width: 25%;
+  }
+  [data-vis-cols="5"] ol.tabular {
+    width: 20%;
+  }
+  [data-vis-cols="6"] ol.tabular {
+    width: 16.66667%;
+  }
+  [data-vis-cols="7"] ol.tabular {
+    width: 14.28571%;
+  }
+  [data-vis-cols="8"] ol.tabular {
+    width: 12.5%;
+  }
+  [data-vis-cols="9"] ol.tabular, [data-vis-cols="17"] ol.tabular, [data-vis-cols="18"] ol.tabular {
+    width: 11.11111%;
+  }
+  [data-vis-cols="10"] ol.tabular, [data-vis-cols="19"] ol.tabular, [data-vis-cols="20"] ol.tabular {
+    width: 10%;
+  }
+  [data-vis-cols="11"] ol.tabular, [data-vis-cols="21"] ol.tabular, [data-vis-cols="22"] ol.tabular {
+    width: 9.09091%;
+  }
+  [data-vis-cols="12"] ol.tabular, [data-vis-cols="23"] ol.tabular, [data-vis-cols="24"] ol.tabular {
+    width: 8.33333%;
+  }
+  [data-vis-cols="13"] ol.tabular, [data-vis-cols="25"] ol.tabular, [data-vis-cols="26"] ol.tabular {
+    width: 7.69231%;
+  }
+  [data-vis-cols="14"] ol.tabular {
+    width: 7.14286%;
+  }
+  [data-vis-cols="15"] ol.tabular {
+    width: 6.66667%;
+  }
+  [data-vis-cols="16"] ol.tabular {
+    width: 6.25%;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

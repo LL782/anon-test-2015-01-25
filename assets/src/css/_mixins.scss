@@ -1,17 +1,17 @@
-/* Variables
-   =========
-   All variables used throughout SASS files.
+/* Mixins
+   ======
+   All mixins used throughout SASS files.
 
    Contents:
-    - Colours
+    - Dimensions
 
 */
 
 
 /* ==========================================================================
-   Colours
+   Dimensions
    ========================================================================== */
    
-$colHighlightBright: #ff9;
-$colShadeLight: #ffc;
-$colInk1: #222;
+@mixin percental_width($cols) {
+    width: 100%/$cols;
+}
