@@ -39,7 +39,7 @@ textarea {
     ol {
         border-width: 1px 0 0;
         float: left;
-        list-style: outside none none;
+        list-style: none;
         margin: 0;
         padding: 0;
         min-width: 60px;
@@ -68,5 +68,17 @@ textarea {
                 // Responsive dimensions are also defined in breakpoint SASS files
             }
         }
+    }
+}
+ul,ol {
+    &.list-styleless {
+        list-style: none;
+        margin: 0 0 1em;
+        padding: 0;
+
+        li {
+            margin: 0;
+        }
+
     }
 }
