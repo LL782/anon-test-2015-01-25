@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Front end developer demo</title>
+        <meta name="description" content="An anonymous developer demo to demonstrate a simple JavaScript application that reads paragraphs of text and creates a table of all the words entered.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="assets/src/css/main.css">
+
+        <!-- Add media query support for IE8 -->
+        <!--[if lt IE 9]>
+            <script src="assets/js/libs/respond.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header>
+            <h1>Front end developer demo</h1>
+        </header>
+
+        <main class="mod" data-mods="paragraphAnalyser" data-paragraph-analyser='{
+            "inputText":        "#user-input",
+            "inputTrigger":     "#input-trigger",
+            "outputTable":      "#output-table",
+            "outputTallyList":  "#output-tally",
+            "errorMessage":     "legend.highlight",
+            "waitingMessage":   "#waiting-message"
+        }'>
+            <header>
+                <h2>Input</h2>
+            </header>
+            <section class="input">
+                <form action="#">
+                    <fieldset>
+                        <legend class="highlight">Your text should contain words and no numbers.</legend>
+                        <textarea name="user_input" id="user-input" cols="30" rows="10" placeholder="Type here..." class="full-width"></textarea>
+                    </fieldset>
+                    <button type="button" id="input-trigger">Submit</button>
+                </form>
+            </section>
+            <section class="output">
+                <h2>Output</h2>
+                <p id="waiting-message">Awaiting valid input</p>
+                <div id="output-table" class="tabular-list-wrap"></div>
+                <ul id="output-tally" class="list-styleless"></ul>
+                <!-- Template example content
+                <div id="output-table" class="tabular-list-wrap" data-vis-cols="10">
+                    <ol class="tabular">
+                        <li class="list-header">B</li>
+                        <li title="bag">bag</li>
+                        <li title="became">became</li>
+                        <li title="before">before</li>
+                        <li title="brown">brown</li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">D</li>
+                        <li title="dog">dog</li>
+                        <li title="duffle">duffle</li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">F</li>
+                        <li title="fox">fox</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">H</li>
+                        <li title="happy">happy</li>
+                        <li title="he's">he's</li>
+                        <li title="his">his</li>
+                        <li title="hissuperlongwordfortestingpurposes">hissuperlongwordfortestingpurposes</li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">J</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">L</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">N</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">O</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">Q</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <ol class="tabular">
+                        <li class="list-header">T</li>
+                        <li title="the (3)" class="has-multiple">the <span class="multiple-counter">(3)</span></li>
+                        <li title="toy">toy</li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+                <ul id="output-tally" class="list-styleless">
+                    <li>Words = 19</li>
+                    <li>, = 2</li>
+                    <li>. = 1</li>
+                </ul>
+                 -->
+            </section>
+        </main>
+
+
+        <script data-main="assets/js/main" src="assets/js/libs/require.js"></script>
+    </body>
+</html>

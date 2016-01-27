@@ -1,0 +1,6 @@
+
+main.js
+----------------
+libs/jquery.js
+controllers/app.js
+main.js

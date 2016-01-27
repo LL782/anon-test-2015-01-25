@@ -1,0 +1,17 @@
+/* Mixins
+   ======
+   All mixins used throughout SASS files.
+
+   Contents:
+    - Dimensions
+
+*/
+
+
+/* ==========================================================================
+   Dimensions
+   ========================================================================== */
+   
+@mixin percental_width($cols) {
+    width: 100%/$cols;
+}

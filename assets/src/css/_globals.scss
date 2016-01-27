@@ -1,0 +1,66 @@
+/* Global
+   ======
+   Global styles and page layout.
+
+   Contents:
+    - Document styles
+    - Errors
+    - Page layout
+
+*/
+
+
+/* ==========================================================================
+   Document styles
+   ========================================================================== */
+
+html {
+    color: $colInk1;
+    font-size: 1em;
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: $colHighlightBright;
+    text-shadow: none;
+}
+::selection {
+    background: $colHighlightBright;
+    text-shadow: none;
+}
+
+
+/* ==========================================================================
+   Highlights
+   ========================================================================== */
+
+.highlight {
+  background-color: transparent;
+  transition: background-color $animationBaseSpeed;
+
+  &.error {
+    background-color: $colHighlightError; 
+  }
+  &.confirmation {
+    -webkit-animation-name: flash; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: flash;
+    animation-duration: 4s;
+  }
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes flash {
+  from {background-color: $colHighlightConfirmation;}
+  to {background-color: transparent;}
+}
+
+/* Standard syntax */
+@keyframes flash {
+  from {background-color: $colHighlightConfirmation;}
+  to {background-color: transparent;}
+}
+
+
+/* ==========================================================================
+   Page layout
+   ========================================================================== */
