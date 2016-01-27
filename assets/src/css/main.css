@@ -17,6 +17,9 @@
 /* ==========================================================================
    Colours
    ========================================================================== */
+/* ==========================================================================
+   Animation
+   ========================================================================== */
 /* Mixins
    ======
    All mixins used throughout SASS files.
@@ -40,6 +43,7 @@
 
    Contents:
     - Document styles
+    - Errors
     - Page layout
 
 */
@@ -62,6 +66,43 @@ html {
   text-shadow: none;
 }
 
+/* ==========================================================================
+   Highlights
+   ========================================================================== */
+.highlight {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+.highlight.error {
+  background-color: #f99;
+}
+.highlight.confirmation {
+  -webkit-animation-name: flash;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 4s;
+  /* Chrome, Safari, Opera */
+  animation-name: flash;
+  animation-duration: 4s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes flash {
+  from {
+    background-color: #9f9;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+/* Standard syntax */
+@keyframes flash {
+  from {
+    background-color: #9f9;
+  }
+  to {
+    background-color: transparent;
+  }
+}
 /* ==========================================================================
    Page layout
    ========================================================================== */

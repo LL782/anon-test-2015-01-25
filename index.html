@@ -10,11 +10,9 @@
 
         <link rel="stylesheet" href="assets/src/css/main.css">
 
-        <script src="assets/js/libs/modernizr-2.8.3.min.js"></script>
-
         <!-- Add media query support for IE8 -->
         <!--[if lt IE 9]>
-            <script src="assets/js/libs/respond.min.js"></script>
+            <script src="assets/js/libs/respond.js"></script>
         <![endif]-->
     </head>
     <body>
@@ -23,25 +21,36 @@
         <![endif]-->
 
         <header>
-            <h1>Front end developer test</h1>
+            <h1>Front end developer demo</h1>
         </header>
 
-        <main>
+        <main class="mod" data-mods="paragraphAnalyser" data-paragraph-analyser='{
+            "inputText":        "#user-input",
+            "inputTrigger":     "#input-trigger",
+            "outputTable":      "#output-table",
+            "outputTallyList":  "#output-tally",
+            "errorMessage":     "legend.highlight",
+            "waitingMessage":   "#waiting-message"
+        }'>
             <header>
-                <h2>Input a sentance and press the button</h2>
+                <h2>Input</h2>
             </header>
             <section class="input">
                 <form action="#">
                     <fieldset>
-                        <legend>Your sentance should contain only words, no numbers.</legend>
-                        <textarea name="userInput" id="userInput" cols="30" rows="10" placeholder="Type here..." class="full-width"></textarea>
+                        <legend class="highlight">Your text should contain words and no numbers.</legend>
+                        <textarea name="user_input" id="user-input" cols="30" rows="10" placeholder="Type here..." class="full-width"></textarea>
                     </fieldset>
-                    <button type="button">Click here</button>
+                    <button type="button" id="input-trigger">Submit</button>
                 </form>
             </section>
             <section class="output">
                 <h2>Output</h2>
-                <div class="tabular-list-wrap" data-vis-cols="10">
+                <p id="waiting-message">Awaiting valid input</p>
+                <div id="output-table" class="tabular-list-wrap"></div>
+                <ul id="output-tally" class="list-styleless"></ul>
+                <!-- 
+                <div id="output-table" class="tabular-list-wrap" data-vis-cols="10">
                     <ol class="tabular">
                         <li class="list-header">B</li>
                         <li title="bag">bag</li>
@@ -113,18 +122,16 @@
                         <li></li>
                     </ol>
                 </div>
-                <ul class="list-styleless">
+                <ul id="output-tally" class="list-styleless">
                     <li>Words = 19</li>
                     <li>, = 2</li>
                     <li>. = 1</li>
                 </ul>
+                 -->
             </section>
         </main>
 
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="assets/src/js/main.js"></script>
+        <script data-main="assets/src/js/main" src="assets/js/libs/require.js"></script>
     </body>
 </html>

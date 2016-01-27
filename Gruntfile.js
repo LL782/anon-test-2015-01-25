@@ -1,11 +1,32 @@
 /*global module:true, require:true */
 module.exports = function(grunt) {
 
+
+  /********************
+    LOAD DEPENDANCIES
+  ********************/
+
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+
+  /********************
+    CONFIGURE TASKS
+  ********************/
+
   grunt.initConfig({
 
-    // JS tasks
+
+    /****************************************
+      JS TASKS
+    ****************************************/
+
     jshint: {
-      files: ['Gruntfile.js', 'assets/src/js/**/*.js', 'test/**/*.js'],
+      files: [
+        'Gruntfile.js',
+        'assets/src/js/controllers/*.js',
+        'assets/src/js/mods/*.js',
+        'tests/**/*.js'
+      ],
       options: {
         // enforcers
         camelcase: true, // vars are camelCase or UPPER_UNDERSCORED
@@ -27,14 +48,67 @@ module.exports = function(grunt) {
         sub: true, // don't enforce dot notation (e.g. my['thing'] is acceptable as is my.thing)
         
         globals: {
+
+          // Assume jQuery globals
           jQuery: true,
           $: true,
-          Modernizr: true
+
+          // Assume Require globals
+          define: true,
+
+          // Assume jasmine globals
+          describe: true,
+          beforeEach: true,
+          afterEach: true,
+          it: true,
+          xit: true,
+          expect: true,
+          jasmine: true
+
+        }
+      }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: 'assets/src/js',
+          dir: 'assets/js',
+          optimize: 'uglify',
+          mainConfigFile:'assets/src/js/main.js',
+          modules:[
+            {
+              name:'main'
+            }
+          ]
         }
       }
     },
 
-    // CSS Preprocessor
+    /****************************************
+      TEST RUNNERS
+    ****************************************/
+
+    jasmine: {
+      src: {
+        options: {
+          vendor: ['assets/src/js/libs/jquery.js'],
+          specs: 'tests/jasmine/**/*Spec.js',
+          template: require('grunt-template-jasmine-requirejs'),
+          keepRunner: true,
+          templateOptions: {
+            requireConfig: {
+              baseUrl: 'assets/src/js'
+            }
+          }
+        }
+      },
+    },
+
+
+    /****************************************
+      CSS TASKS
+    ****************************************/
+
     sass: {
       src: {
         options: {
@@ -56,7 +130,11 @@ module.exports = function(grunt) {
       }
     },
 
-    // Misc tasks
+
+    /********************
+      MISC TASKS
+    ********************/
+
     watch: {
       all: {
         files: [
@@ -84,14 +162,27 @@ module.exports = function(grunt) {
     },
   });
 
-  // Load tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  // Register tasks
-  grunt.registerTask('js', ['jshint']);
+  /********************
+    CUSTOM TASKS
+  ********************/
+  grunt.registerTask('js', [
+    'jshint',
+    'jasmine',
+    'requirejs'
+  ]);
+
+  grunt.registerTask('tests', [
+    'jshint',
+    'jasmine'
+  ]);
+
   grunt.registerTask('css', ['sass']);
+
   grunt.registerTask('default', [
-    'jshint','sass'
+    'jshint',
+    'requirejs',
+    'sass'
   ]);
 
 };
