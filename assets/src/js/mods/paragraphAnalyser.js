@@ -183,8 +183,8 @@ define(function(require){
         */
         processWords : function(wordsObject){
 
-            /* jshint maxstatements: 24 */
-            /* jshint maxcomplexity: 9 */
+            /* jshint maxstatements: 25 */
+            /* jshint maxcomplexity: 10 */
 
             var output = {
                 'table' : {
@@ -261,6 +261,9 @@ define(function(require){
                     }
                 } else { // A new column needs to be added for this word
                     output.table.cols.push( {letter:letter, words:[{word:thisWord, quantity:1}]} );
+
+                    // Max items increased if appropriate
+                    output.table.maxItems = 1 > output.table.maxItems ? 1 : output.table.maxItems;
                 }
             }
 
